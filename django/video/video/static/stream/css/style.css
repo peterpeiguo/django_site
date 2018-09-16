@@ -1,0 +1,67 @@
+#video-container {
+	position: relative;
+}
+
+#video-container:hover #video-controls {
+	opacity: .9;
+}
+
+body {
+	width: 1290px;
+}
+
+#video {
+	max-width: 100%;
+}
+
+#previous_episode, #next_episode {
+	color: #F00;
+}
+
+#video-controls {
+	position: absolute;
+	bottom: 0px;
+	opacity: 0;
+	background-color: chocolate;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#video-controls button, #video-controls input {
+	margin: 3px;
+}
+
+#video-controls a, #video-controls label {
+	margin: 2px 5px 2px 5px;
+	color: purple;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#seek-bar {
+	width: 85%;
+}
+
+#progress-label {
+	width: 15%;
+}
+
+#volume-bar {
+	width: 300px;
+}
+
+.list-group-item:hover {
+	font-size: larger;
+	color: yellow;
+	background: blueviolet;
+	font-weight: bold;
+}
+
+.list-group-item:hover a {
+	color: yellow;
+}

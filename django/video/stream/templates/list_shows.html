@@ -1,0 +1,15 @@
+{% extends "site.html" %}
+
+{% load static %}
+
+{% block body %}
+
+
+<p class="h3"><small class="text-muted">Shows Available</small></p>
+<div class="list-group">
+{% for folder in folders %}
+    <a href="list_episodes/{{folder}}" class="list-group-item">{{folder}}</a>
+{% endfor %}
+</div>
+
+{% endblock body %}

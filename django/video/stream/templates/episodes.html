@@ -1,0 +1,15 @@
+{% extends "site.html" %}
+
+{% load static %}
+
+{% block body %}
+
+
+<p class="h3"><small class="text-muted">Episodes Available</small></p>
+<div class="list-group">
+{% for episode in episodes %}
+    <a  class="list-group-item" href="../episode/{{show_name}}/{{episode}}">{{episode}}</a>
+{% endfor %}
+</div>
+
+{% endblock body %}

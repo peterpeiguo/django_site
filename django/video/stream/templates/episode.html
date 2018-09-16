@@ -1,0 +1,41 @@
+{% extends "site.html" %}
+
+{% load static %}
+
+{% block body %}
+<script src={% static "stream/scripts/video.js" %}></script>
+
+<p class="h3"><small class="text-muted">{{show_name}} - {{episode}}</small></p>
+<div id="video-container" class="embed-responsive embed-responsive-16by9">
+    <!-- Video -->
+    <video id="video" preload="auto" autoplay class="embed-responsive-item">
+      <source src="http://192.168.1.67:3000/twitter/video/{{show_name}}/{{episode}}" type="video/mp4">
+    </video>
+    <!-- Video Controls -->
+    <div id="video-controls" class="input-group">
+        <input type="range" class="form-control-range" id="seek-bar" value="0" min="0" max="0">
+        <label id="progress_label" for="seek-bar"></label>
+        <label id="preload_label" for="seek-bar"></label>
+        <div class="dropdown">
+            <button id="speed-button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Speed
+            </button>
+            <div id="speed" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">x1.0</a>
+                <a class="dropdown-item" href="#">x1.2</a>
+                <a class="dropdown-item" href="#">x1.5</a>
+                <a class="dropdown-item" href="#">x2.0</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="mute">Mute</button>
+        <input type="range" class="custome-range" id="volume-bar" min="0" max="100" step="1" value="50">
+        <button type="button" class="btn btn-primary" id="full-screen">Full-Screen</button>
+        {% if previous_episode %}
+          <a id="previous_episode" href="../{{show_name}}/{{previous_episode}}">{{previous_episode}}</a>
+        {% endif %}
+        {% if next_episode %}
+          <a id="next_episode" href="../{{show_name}}/{{next_episode}}">{{next_episode}}</a>            
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}
