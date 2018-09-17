@@ -31,13 +31,16 @@ def list_episodes(request, show_name):
 
 def episode(request, show_name, episode):
     show_name = unquote(show_name)
+    '''
     episodes = get_episodes(show_name)
+    '''
     context = {'show_name': show_name, 'episode': episode}
+    '''
     index = episodes.index(episode)
     if index > 0:
         context["previous_episode"] = episodes[index - 1]
     if index < len(episodes) - 1:
         context["next_episode"] = episodes[index + 1]
-
+    '''
     template = loader.get_template('episode.html')
     return HttpResponse(template.render(context, request))     
